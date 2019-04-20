@@ -1,0 +1,19 @@
+<h1>Articles</h1>
+
+<ul>
+
+  {{#fromDB}}
+  {{#each Article}}
+  <li>
+    <p>Title: {{this.title}}</p>
+    <p>Task: {{this.task}}</p>
+    <form action="/articles/:id" method="POST">
+      <textarea type="text" name="task"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </li>
+  {{/each}}
+  {{/fromDB}}
+
+</ul>
